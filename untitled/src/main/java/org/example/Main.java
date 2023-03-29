@@ -3,17 +3,51 @@ package org.example;
 import java.util.Scanner;
 import java.awt.*;
 public class Main {
-
     public static void main(String[] args) {
-        Ship ship1 = new Ship(new Point(1, 1), new Point(1, 3));
-        Ship ship2 = new Ship(new Point(2, 1), new Point(2, 3));
-        Ship ship3 = new Ship(new Point(3, 1), new Point(3, 3));
-        Ship ship4 = new Ship(new Point(1, 1), new Point(1, 3));
-        Ship ship5 = new Ship(new Point(2, 1), new Point(2, 3));
-        Ship ship6 = new Ship(new Point(3, 1), new Point(3, 3));
-
-        User user1 = new User(ship1, ship2, ship3);
-        User user2 = new User(ship4, ship5, ship6);
-        //No hay main en el enunciado, no se como probar el programa
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of ships: ");
+        int numberOfShips = scanner.nextInt();
+        Ship[] ships = new Ship[numberOfShips];
+        for (int i = 0; i < numberOfShips; i++) {
+            System.out.println("Enter the type of ship: ");
+            String typeOfShip = scanner.next();
+            System.out.println("Enter the start point: ");
+            int x1 = scanner.nextInt();
+            int y1 = scanner.nextInt();
+            System.out.println("Enter the end point: ");
+            int x2 = scanner.nextInt();
+            int y2 = scanner.nextInt();
+            Point startPoint = new Point(x1, y1);
+            Point endPoint = new Point(x2, y2);
+            switch (typeOfShip) {
+                case "Canoe":
+                    ships[i] = new Canoe(startPoint, endPoint);
+                    break;
+                case "Frigate":
+                    ships[i] = new Frigate(startPoint, endPoint);
+                    break;
+                case "BattleShip":
+                    ships[i] = new BattleShip(startPoint, endPoint);
+                    break;
+            }
         }
+        System.out.println("Enter the number of shots: ");
+        int numberOfShots = scanner.nextInt();
+        for (int i = 0; i < numberOfShots; i++) {
+            System.out.println("Enter the shot point: ");
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            Point shotPoint = new Point(x, y);
+            for (Ship ship : ships) {
+                ship.getShot(shotPoint);
+            }
+        }
+        for (Ship ship : ships) {
+            if (ship.isSunk()) {
+                System.out.println("Ship is sunk");
+            } else {
+                System.out.println("Ship is not sunk");
+            }
+        }
+    }
 }
