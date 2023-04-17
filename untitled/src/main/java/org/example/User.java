@@ -10,9 +10,6 @@ public class User {
 
     //Constructor
     public User(List<Ship> ships) {
-        if (ships == null || ships.isEmpty() || ships.size() > 3) {
-            throw new IllegalArgumentException("Invalid ship list");
-        }
         this.ships = ships;
         this.isAlive = true;
     }
