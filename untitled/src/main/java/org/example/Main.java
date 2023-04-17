@@ -432,5 +432,9 @@ public class Main {
             }
             salir = true;
         } while (salir == false);
+        //Esto es todo el código, lo he hecho todo prácticamente a mano sin copilot ni chatgpt pero no me funciona del todo bien la parte de atacar barcos,
+        // colocarlos en el tablero funciona perfectamente. No sé donde está el error, pero creo que tiene que ver con las listas de barcos,
+        // te lo entrego así porque no se muy bien como hacer que funcione pero el código tiene sentido.
+
     }
 }
