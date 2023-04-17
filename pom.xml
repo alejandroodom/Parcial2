@@ -8,6 +8,7 @@
   <modules>
     <module>untitled</module>
       <module>Ejercicio8</module>
+      <module>Ejercicio7</module>
   </modules>
   <name>Archetype - Parcial2</name>
   <url>http://maven.apache.org</url>

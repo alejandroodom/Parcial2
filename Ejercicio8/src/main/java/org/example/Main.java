@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        PuertoGraph puertoGraph = new PuertoGraph();
+        PuertoGrafos puertoGraph = new PuertoGrafos();
 
         // Agregar puertos
         puertoGraph.agregarPuerto("Madero");
